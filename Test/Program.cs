@@ -9,9 +9,9 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            Image test1 = Image.FromFile(Application.SetupDir.CombinePath("yangmi.jpg")).Resize(1024, 768);
+            Image test1 = Image.FromFile(Application.SetupDir.CombinePath("yangmi.jpg")).Resize(600, 400, Color.Black);
 
-            test1.Save(Application.SetupDir.CombinePath("yangmi_1024_768.jpg"));
+            test1.Save(Application.SetupDir.CombinePath("yangmi_600_400.jpg"));
         }
     }
 }
