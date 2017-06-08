@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿//bibaoke.com
+
+using System.Text;
 
 namespace Less.Text
 {

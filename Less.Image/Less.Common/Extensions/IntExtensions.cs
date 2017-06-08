@@ -1,4 +1,6 @@
-﻿using System;
+﻿//bibaoke.com
+
+using System;
 
 namespace Less.Collection
 {

@@ -1,4 +1,6 @@
-﻿namespace Less.Text
+﻿//bibaoke.com
+
+namespace Less.Text
 {
     /// <summary>
     /// 大小写选项

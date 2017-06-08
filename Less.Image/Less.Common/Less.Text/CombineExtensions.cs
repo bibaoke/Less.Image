@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿//bibaoke.com
+
+using System.Collections.Generic;
 using System.Text;
 using System.Collections.Specialized;
 using Less.Collection;

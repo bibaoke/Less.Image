@@ -1,4 +1,6 @@
-﻿namespace Less.Text
+﻿//bibaoke.com
+
+namespace Less.Text
 {
     /// <summary>
     /// 提供常用符号
