@@ -16,7 +16,7 @@ namespace Test
 
             Image test1 = origin.Resize(600, 400, Color.Black);
 
-            test1.Save(Application.SetupDir.CombinePath("yangmi_600_400.jpg"), ImageFormat.Jpeg);
+            test1.Save(Application.SetupDir.CombinePath("yangmi_600_400.jpg"), 100);
         }
     }
 }
