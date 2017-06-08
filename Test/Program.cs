@@ -2,6 +2,7 @@
 using Less.Windows;
 using Less.Text;
 using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace Test
 {
@@ -15,7 +16,7 @@ namespace Test
 
             Image test1 = origin.Resize(600, 400, Color.Black);
 
-            test1.Save(Application.SetupDir.CombinePath("yangmi_600_400.jpg"));
+            test1.Save(Application.SetupDir.CombinePath("yangmi_600_400.jpg"), ImageFormat.Jpeg);
         }
     }
 }

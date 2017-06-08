@@ -46,19 +46,14 @@
   <ItemGroup>
     <Compile Include="ImageExtensions.cs" />
     <Compile Include="ImageFormatExtensions.cs" />
+    <Compile Include="Less.Common\Extensions\FloatExtensions.cs" />
+    <Compile Include="Less.Common\Extensions\ObjectExtensions.cs" />
+    <Compile Include="Less.Common\Less.Collection\ObjectExtensions.cs" />
+    <Compile Include="Less.Common\Less.Network\MimeType.cs" />
     <Compile Include="Less.Common\Less.Text\CaseOptions.cs" />
     <Compile Include="Less.Common\Less.Text\CombineExtensions.cs" />
     <Compile Include="Less.Common\Less.Text\CompareExtensions.cs" />
-    <Compile Include="Less.Common\Extensions\DoubleExtensions.cs" />
-    <Compile Include="Less.Common\DynamicString.cs" />
-    <Compile Include="Less.Common\Extensions\FloatExtensions.cs" />
-    <Compile Include="Less.Common\Extensions\IntExtensions.cs" />
-    <Compile Include="Less.Common\Less.Collection\ObjectExtensions.cs" />
-    <Compile Include="Less.Common\Less.Network\MimeType.cs" />
-    <Compile Include="Less.Common\Less.Text\MyEncoding.cs" />
-    <Compile Include="Less.Common\Extensions\ObjectExtensions.cs" />
     <Compile Include="Less.Common\Less.Text\StringEnum.cs" />
-    <Compile Include="Less.Common\Less.Text\Symbol.cs" />
     <Compile Include="Less.Common\Less.Text\VerifyExtensions.cs" />
     <Compile Include="Less.Common\Less.Windows\Application.cs" />
     <Compile Include="Less.Common\Less.Windows\IO\StringExtensions.cs" />

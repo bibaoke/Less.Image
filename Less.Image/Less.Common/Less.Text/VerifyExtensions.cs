@@ -8,26 +8,6 @@ namespace Less.Text
     public static class VerifyExtensions
     {
         /// <summary>
-        /// 是否 unicode 字符串
-        /// </summary>
-        /// <param name="s"></param>
-        /// <returns></returns>
-        public static bool IsUnicode(this string s)
-        {
-            return MyEncoding.GB2312.GetByteCount(s) >= s.Length + (decimal)s.Length / 2;
-        }
-
-        /// <summary>
-        /// 是否存在 unicode 字符
-        /// </summary>
-        /// <param name="s"></param>
-        /// <returns></returns>
-        public static bool HasUnicode(this string s)
-        {
-            return MyEncoding.GB2312.GetByteCount(s) != s.Length;
-        }
-
-        /// <summary>
         /// 不是空字符串 不是空白字符
         /// 
         /// </summary>
