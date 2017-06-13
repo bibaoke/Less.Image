@@ -1,2 +1,101 @@
-ï»¿# Less.Image
-ä¸€ä¸ªç®€å•çš„ C# å›¾ç‰‡ç¼©æ”¾æ¨¡å—
+<h2 style="text-align:center;">
+	<span style="color:#24292E;font-family:-apple-system, BlinkMacSystemFont, " background-color:#ffffff;"="">Ò»¸ö¼òµ¥µÄ C# Í¼Æ¬Ëõ·ÅÄ£¿é ¡ª¡ª&nbsp;<span style="color:#24292E;font-family:-apple-system, BlinkMacSystemFont, " background-color:#ffffff;"="">Less.Image&nbsp;</span><span style="color:#24292E;font-family:-apple-system, BlinkMacSystemFont, " background-color:#ffffff;"=""></span></span> 
+</h2>
+<p>
+	<span>¶ÔÓÚ web ÏîÄ¿À´Ëµ£¬¶ÔÍ¼Æ¬½øÐÐ²»Í¬³ß´çµÄËõÐ¡ÊÇ±ØÐëµÄ¡£</span> 
+</p>
+<p>
+	<span>Èç¹ûÄã±àÐ´¹ýÖ§³Ö IE6 µÄ web ÏîÄ¿£¬Äã»á¼ÇµÃ IE6 ¶ÔÍ¼Æ¬µÄËõ·ÅÐ§¹ûÊÇºÜ²îµÄ£¬Òª½ûÖ¹ÄãµÄÍ¼Æ¬±»ä¯ÀÀÆ÷Ëõ·Å£¬¾ÍÒªÔÚ·þÎñ¶ËÏÈ°ÑÍ¼Æ¬Ëõ·Åµ½ÊÊºÏµÄ³ß´ç¡£ÏÖÔÚ IE6 »ù±¾±»ÌÔÌ­ÁË£¬µ«ÊÇÎªÁËÒ³ÃæµÄ¼ÓÔØËÙ¶È£¬Äã»¹ÊÇÒªÔÚ·þÎñÆ÷¶Ë°ÑÍ¼Æ¬ËõÐ¡¡£ÌØ±ðÊÇÏÖÔÚºÜ¶àÈËÓÃÒÆ¶¯Á÷Á¿ä¯ÀÀÍøÒ³£¬ÎªÁË½ÚÊ¡ÓÃ»§µÄÁ÷Á¿·Ñ£¬Ò²ÒªÔÚ·þÎñÆ÷¶Ë°ÑÍ¼Æ¬ËõÐ¡£¬×îºÃ·þÎñÆ÷¶ËÏìÓ¦µÄÍ¼Æ¬£¬´óÐ¡ºÍÔÚä¯ÀÀÆ÷³ÊÏÖµÄÊÇÒ»ÑùµÄ¡£</span> 
+</p>
+<p>
+	´óÔ¼ÔÚÆß°ËÄêÇ°£¬ÎÒÐ´ÁËÒ»Ð©·þÎñÆ÷¶ËËõ·ÅÍ¼Æ¬µÄ´úÂë¡£ÏÖÔÚÐÞ¸ÄÒ»ÏÂ¿ªÔ´³öÀ´¡£
+</p>
+<p>
+	È¡Ò»ÕÅ²âÊÔÓÃµÄÔ­Í¼£¬³ß´çÎª 600¡Á721£º
+</p>
+<p>
+	<img alt="" src="http://bibaoke.com/img/PC2m0_kDK0Oma8tUy0sPUA?auth=post" /> 
+</p>
+<p>
+	¶ÁÈ¡Í¼Æ¬£º
+</p>
+<pre class="brush:csharp">Image origin = Image.FromFile(file);
+</pre>
+<p>
+	°ÑÍ¼Æ¬µ÷ÕûÎª 300¡Á200£º
+</p>
+<pre class="brush:csharp">Image test1 = origin.Resize(300, 200);</pre>
+<p>
+	Ð§¹ûÈçÏÂ£º
+</p>
+<p>
+	<img style="width:50%;" alt="" src="http://bibaoke.com/img/bpWjdFtisEK4Ij8t1aDvRA?auth=post" /> 
+</p>
+<p>
+	Resize ·½·¨µÄÕâ¸öÖØÔØÎÞÂÛÖ¸¶¨Ê²Ã´Ñù³ß´ç£¬¶¼²»»á¶ÔÍ¼Æ¬½øÐÐ²Ã¼ô£¬¶øÊÇÊ¹ÓÃÌî³äµÄ·½·¨£¬×Ô¶¯¼ÆËãÔÚ¿í¶ÈÉÏÌî³ä»¹ÊÇÔÚ¸ß¶ÈÉÏÌî³ä¡£ÉÏÃæµÄÀý×ÓÊÇÔÚ¿í¶ÈÉÏÌî³äµÄ¡£Èç¹û²»ÏëÕâÑù£¬¿ÉÒÔÊ¹ÓÃÁíÒ»¸öÖØÔØ£º
+</p>
+<pre class="brush:csharp">Image test2 = 
+&nbsp;&nbsp;&nbsp;&nbsp;origin.Resize(300, 200, ResizeMode.WidthFirst);</pre>
+<p>
+	Ð§¹ûÈçÏÂ£º
+</p>
+<p>
+	<img style="width:50%;" alt="" src="http://bibaoke.com/img/ZAKkQ1Qu5USjT9FICR8-dQ?auth=post" /> 
+</p>
+<p>
+	Õâ´ÎÍ¬ÑùÊÇ°ÑÍ¼Æ¬µ÷ÕûÎª&nbsp;<span>300¡Á200£¬µ«ÊÇÊ¹ÓÃÁË²Ã¼ôµÄ·½·¨¡£º¯ÊýµÄµÚÈý¸ö²ÎÊý&nbsp;ResizeMode ÊÇÒ»¸ö Resize Ä£Ê½Ñ¡Ïî£¬ÓÐ&nbsp;<span>ResizeMode.</span><span>WidthFirst</span> ¿í¶ÈÓÅÏÈ£¬ºÍ&nbsp;<span>ResizeMode.HeightFirst ¸ß¶ÈÓÅÏÈ</span>Á½¸öÑ¡Ïî¡£test2 Ñ¡ÔñÁË¿í¶ÈÓÅÏÈ£¬ÒâË¼ÊÇ²»ÔÚÍ¼Æ¬µÄ¿í¶È×öÈÎºÎµÄ²Ã¼ôºÍÌî³ä£¬Èç¹ûµ÷ÕûºóµÄÍ¼Æ¬ºÍÔ­Í¼±ÈÀý²»Í¬£¬Ö»ÔÚÍ¼Æ¬µÄ¸ß¶ÈÉÏ×öµ÷Õû¡£test2 ¾ÍÔÚÍ¼Æ¬µÄ¸ß¶ÈÉÏ×öÁË²Ã¼ô¡£Èç¹û test2 Ñ¡Ôñ¸ß¶ÈÓÅÏÈ£¬Ð§¹ûÊÇºÍ test1 Ò»ÑùµÄ£¬test1 º¯ÊýÊÇÒòÎª²»ÄÜ¶ÔÍ¼Æ¬×ö²Ã¼ô£¬¶ø×Ô¶¯Ñ¡ÔñÁË¸ß¶ÈÓÅÏÈ¡£</span> 
+</p>
+<p>
+	ÕâÖÖËõ·ÅµÄ·½·¨ÊÇÆÕ±éÓÃÔÚ web ±à³ÌµÄ·þÎñ¶ËÉÏÃæµÄ£¬ÎÒ¿´µ½µÄ²úÆ·¶¼»áÊ¹ÓÃ²Ã¼ôµÄ·½·¨£¬±ÈÈçÎ¢ÐÅ¡¢Î¢²©¡£²Ã¼ôËäÈ»»áÊ¹Í¼Æ¬¡°ËðÊ§¡±ÁËÒ»²¿·Ö£¬µ«¶Ô±ÈÆðÌî³äÀ´Ëµ£¬¿ÉÒÔÈÃ½çÃæ¸üºÃ¿´£¬ÒòÎª²»»áÓÐÃ»ÓÐÒâÒåµÄµ×É«¡£
+</p>
+<p>
+	Ê¹ÓÃ Crop ·½·¨¿ÉÒÔÖ¸¶¨Ê¹ÓÃ²Ã¼ô£º
+</p>
+<pre class="brush:csharp">Image test3 = origin.Crop(100, 100);</pre>
+<p>
+	ÓÃÏÖÔÚÁ÷ÐÐµÄ¾Å¹¬¸ñ·½·¨ÑÝÊ¾Ð§¹û£º
+</p>
+<p>
+	<img style="width:30%;" alt="" src="http://bibaoke.com/img/RvKfhYYotUuYUoulxVI8zQ?auth=post" />&nbsp;&nbsp;<img style="width:30%;" alt="" src="http://bibaoke.com/img/RvKfhYYotUuYUoulxVI8zQ?auth=post" />&nbsp;&nbsp;<img style="width:30%;" alt="" src="http://bibaoke.com/img/RvKfhYYotUuYUoulxVI8zQ?auth=post" />&nbsp;&nbsp;<br />
+<img style="width:30%;" alt="" src="http://bibaoke.com/img/RvKfhYYotUuYUoulxVI8zQ?auth=post" />&nbsp;&nbsp;<img style="width:30%;" alt="" src="http://bibaoke.com/img/RvKfhYYotUuYUoulxVI8zQ?auth=post" />&nbsp;&nbsp;<img style="width:30%;" alt="" src="http://bibaoke.com/img/RvKfhYYotUuYUoulxVI8zQ?auth=post" />&nbsp;&nbsp;<br />
+<img style="width:30%;" alt="" src="http://bibaoke.com/img/RvKfhYYotUuYUoulxVI8zQ?auth=post" />&nbsp;&nbsp;<img style="width:30%;" alt="" src="http://bibaoke.com/img/RvKfhYYotUuYUoulxVI8zQ?auth=post" />&nbsp;&nbsp;<img style="width:30%;" alt="" src="http://bibaoke.com/img/RvKfhYYotUuYUoulxVI8zQ?auth=post" />&nbsp;&nbsp;
+</p>
+<p>
+	Less.Image µÄ²Ã¼ôËã·¨ÊÇ½ØÈ¡Í¼Æ¬µÄÖÐ¼ä²¿·ÖµÄ£¬ÒòÎª´ó²¿·ÖÍ¼Æ¬µÄÖ÷Ìå¶¼ÔÚÖÐ¼ä£¬±ÈÈçÑîÃÝÕâÕÅÍ¼Æ¬¡£Î¢²©ÓÐÒ»ÖÖ²Ã¼ôËã·¨ÊÇ½ØÈ¡Í¼Æ¬µÄÉÏ²¿µÄ£¬ÕâÊÇÕë¶ÔÏÖÔÚÁ÷ÐÐµÄ¸ß¶ÈÌØ±ð´óµÄÍ¼Æ¬µÄ£¬±ÈÈçÍ¼Æ¬Ê½µÄ³¤Î¢²©£¬Á¬»·»­µÈ¡£
+</p>
+<p>
+	Èç¹û¶ÔÍ¼Æ¬µÄ¿í¸ß±ÈÃ»ÓÐÒªÇó£¬¿ÉÒÔÊ¹ÓÃ£º
+</p>
+<pre class="brush:csharp">Image test4 = origin.ResizeW(300);
+</pre>
+<p>
+	´úÂëµÄÒâË¼ÊÇ°ÑÍ¼Æ¬µ÷Õû³É¿í¶È 300 ÏñËØ£¬Ð§¹ûÈçÏÂ£º
+</p>
+<p>
+	<img style="width:50%;" alt="" src="http://bibaoke.com/img/FT5DSLrIs0a-bbmDRAj78g?auth=post" /> 
+</p>
+<p>
+	Õâ¸ö·½·¨ÊÇ²»»á¶ÔÍ¼Æ¬½øÐÐ²Ã¼ô»òÌî³äµÄ£¬±£ÁôÁËÔ­Í¼µÄ¿í¸ß±È¡£µ±È»£¬Ò²¿ÉÒÔÖ»Ö¸¶¨¸ß¶È£º
+</p>
+<pre class="brush:csharp">Image test5 = origin.ResizeH(200);
+</pre>
+<p>
+	Éú³ÉÁËÒ»ÕÅ¸ß¶È 200 ÏñËØµÄÍ¼Æ¬£º
+</p>
+<p>
+	<img style="width:28%;" alt="" src="http://bibaoke.com/img/lHtXGodvp0qXn1Vu4IdfbA?auth=post" /> 
+</p>
+<p>
+	Less.Image »¹Ìá¹©ÁË½Ï¶àµÄÖØÔØ·½·¨£¬±ÈÈç¶¨Ìî³äµÄµ×É«£¬²åÖµËã·¨µÈ¡£¿ÉÒÔÓ¦¸¶·þÎñÆ÷¶ËÍ¼Æ¬Ëõ·ÅµÄ´ó²¿·ÖÇé¿ö¡£ÎÒÐ´ÕâÐ©´úÂëµÄÊ±¼ä±È½ÏÔçÁË£¬ÔÚÕâÆÚ¼ä¾­¹ýÁËºÜ¶à²âÊÔ£¬´¦Àí¹ýÊýÊ®ÍòÍ¼Æ¬µÄÅúÁ¿Ëõ·Å£¬ÔÚ Less.Image µÄÄÚ²¿ÊÇ²»»á·¢ÉúÄÚ´æÐ¹Â¶µÄ¡£ÄãÖªµÀ£¬ÔÚ System.Drawing ÃüÃû¿Õ¼äÏÂ£¬ºÜ¶àÀà¶¼ÊÇ·ÇÍÐ¹ÜµÄ¡£
+</p>
+<p>
+	Ô´´úÂë£º<br />
+<a href="https://github.com/bibaoke/Less.Image" target="_blank">https://github.com/bibaoke/Less.Image</a><br />
+<a href="https://code.csdn.net/closurer/less-image/tree/master" target="_blank">https://code.csdn.net/closurer/less-image/tree/master</a> 
+</p>
+<p>
+	Less.Image »¹ÓÐÁ½¸öÈ±µã¡£Ò»ÊÇËõ·Å gif ¶¯»­£¬´¦Àíºó»áÊ£ÏÂµÚÒ»Ö¡£¬Ê§È¥ÁË¶¯»­µÄÐ§¹û£»¶þÊÇÒòÎª windows ÄÚÖÃµÄ png ±àÂëÆ÷²¢²»ÄÜºÜºÃµØÑ¹ËõÍ¼Æ¬£¬ËùÒÔ¶Ô png ½øÐÐËõ·ÅµÄ»°£¬Í¼Æ¬Õ¼ÓÃ¿Õ¼ä»á±È½Ï´ó¡£ËùÒÔÈç¹ûÍ¼Æ¬Ã»ÓÐÍ¸Ã÷ÏñËØµÄ»°£¬×îºÃÊ¹ÓÃ jpg¡£
+</p>
+<p>
+	Èç¹û´ó¼ÒÓÐ¸üºÃµÄÏë·¨£¬ÇëÓëÎÒÁªÏµ¡£
+</p>
