@@ -25,14 +25,19 @@ namespace Test
             test2.Save(Application.SetupDir.CombinePath("yangmi_300_200_WidthFirst.jpg"), 90);
 
             //test3
-            Image test3 = origin.ResizeW(300);
+            Image test3 = origin.Crop(180, 180);
 
-            test3.Save(Application.SetupDir.CombinePath("yangmi_W300.jpg"), 90);
+            test3.Save(Application.SetupDir.CombinePath("yangmi_180_180.jpg"), 90);
 
             //test4
-            Image test4 = origin.ResizeH(200);
+            Image test4 = origin.ResizeW(300);
 
-            test4.Save(Application.SetupDir.CombinePath("yangmi_H200.jpg"), 90);
+            test4.Save(Application.SetupDir.CombinePath("yangmi_W300.jpg"), 90);
+
+            //test5
+            Image test5 = origin.ResizeH(200);
+
+            test5.Save(Application.SetupDir.CombinePath("yangmi_H200.jpg"), 90);
         }
     }
 }
