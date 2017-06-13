@@ -1,2 +1,2 @@
-# Less.Image
-一个简单的 C# 图片 Resize 模块
+﻿# Less.Image
+一个简单的 C# 图片缩放模块
