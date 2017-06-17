@@ -1,5 +1,5 @@
 <h2 style="text-align:center;">
-    一个简单的 C# 图片缩放模块 Less.Image
+    一个简单的 C# 图片缩放模块 —— Less.Image
 </h2>
 <p>
     <span>对于 web 项目来说，对图片进行不同尺寸的缩小是必须的。</span>
