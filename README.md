@@ -89,6 +89,10 @@
     Less.Image 还提供了较多的重载方法，比如定填充的底色，插值算法等。可以应付服务器端图片缩放的大部分情况。我写这些代码的时间比较早了，在这期间经过了很多测试，处理过数十万图片的批量缩放，在 Less.Image 的内部是不会发生内存泄露的。你知道，在 System.Drawing 命名空间下，很多类都是非托管的。
 </p>
 <p>
+    NuGet：<br />
+    <a href="https://www.nuget.org/packages/Less.Image" target="_blank">https://www.nuget.org/packages/Less.Image</a>
+</p>
+<p>
     源代码：<br />
     <a href="https://github.com/bibaoke/Less.Image" target="_blank">https://github.com/bibaoke/Less.Image</a><br />
     <a href="https://code.csdn.net/closurer/less-image/tree/master" target="_blank">https://code.csdn.net/closurer/less-image/tree/master</a>
