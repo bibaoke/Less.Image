@@ -1,0 +1,1 @@
+BetterImageProcessorQuantization.dll 是个免费的第三方 dll。原主页 http://www.waterwijkers.nl/bip，不过现在已经无法访问了。
