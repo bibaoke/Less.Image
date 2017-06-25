@@ -93,7 +93,12 @@
     <a href="https://www.nuget.org/packages/Less.Image" target="_blank">https://www.nuget.org/packages/Less.Image</a>
 </p>
 <p>
-    源代码：<br />
+    本文代码：<br />
+    <a href="https://github.com/bibaoke/Less.Image/blob/master/Test/Program.cs" target="_blank">https://github.com/bibaoke/Less.Image/blob/master/Test/Program.cs</a><br />
+    <a href="https://code.csdn.net/closurer/less-image/tree/master/Test/Program.cs" target="_blank">https://code.csdn.net/closurer/less-image/tree/master/Test/Program.cs</a>
+</p>
+<p>
+    项目代码：<br />
     <a href="https://github.com/bibaoke/Less.Image" target="_blank">https://github.com/bibaoke/Less.Image</a><br />
     <a href="https://code.csdn.net/closurer/less-image/tree/master" target="_blank">https://code.csdn.net/closurer/less-image/tree/master</a>
 </p>
