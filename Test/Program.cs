@@ -1,8 +1,6 @@
 ﻿using Less.Image;
 using Less.Windows;
-using Less.Text;
 using System.Drawing;
-using System.Drawing.Imaging;
 
 namespace Test
 {

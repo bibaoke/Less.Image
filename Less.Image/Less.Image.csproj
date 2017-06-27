@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Less.Image</RootNamespace>
     <AssemblyName>Less.Image</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -36,23 +36,15 @@
     <Reference Include="BetterImageProcessorQuantization">
       <HintPath>..\Less.Dll\BetterImageProcessorQuantization.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="Less.Common, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Less.Common.1.0.0.1\lib\net35\Less.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ImageExtensions.cs" />
     <Compile Include="ImageFormatExtensions.cs" />
-    <Compile Include="Less.Common\Extensions\FloatExtensions.cs" />
-    <Compile Include="Less.Common\Extensions\ObjectExtensions.cs" />
-    <Compile Include="Less.Common\Less.Collection\ObjectExtensions.cs" />
-    <Compile Include="Less.Common\Less.Network\MimeType.cs" />
-    <Compile Include="Less.Common\Less.Text\CaseOptions.cs" />
-    <Compile Include="Less.Common\Less.Text\CombineExtensions.cs" />
-    <Compile Include="Less.Common\Less.Text\CompareExtensions.cs" />
-    <Compile Include="Less.Common\Less.Text\StringEnum.cs" />
-    <Compile Include="Less.Common\Less.Text\VerifyExtensions.cs" />
-    <Compile Include="Less.Common\Less.Windows\Application.cs" />
-    <Compile Include="Less.Common\Less.Windows\IO\StringExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResizeMode.cs" />
     <Compile Include="StringExtensions.cs" />
@@ -61,6 +53,7 @@
     <None Include="Less.Image.nuspec">
       <SubType>Designer</SubType>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
