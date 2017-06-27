@@ -29,6 +29,28 @@ namespace Less.Image
         }
 
         /// <summary>
+        /// 是否包括透明像素
+        /// </summary>
+        /// <param name="i"></param>
+        /// <returns></returns>
+        public static bool HasTransparentPixel(this System.Drawing.Image i)
+        {
+            using (Bitmap bitmap = new Bitmap(i))
+            {
+                for (int x = 0; x < bitmap.Width; x++)
+                {
+                    for (int y = 0; y < bitmap.Height; y++)
+                    {
+                        if (bitmap.GetPixel(x, y).A < 255)
+                            return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
         /// 获取图片的 mime type
         /// </summary>
         /// <param name="i"></param>
