@@ -13,7 +13,7 @@
     <description>$description$</description>
     <releaseNotes>修改信息</releaseNotes>
     <copyright>Copyright 2017 Shao Zhuang</copyright>
-    <tags>image resize</tags>
+    <tags>image-resize</tags>
   </metadata>
   <files>
     <file src="..\Less.Dll\BetterImageProcessorQuantization.dll" target="lib\net35"></file>
