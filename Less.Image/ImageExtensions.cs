@@ -9,6 +9,7 @@ using System.IO;
 using BetterImageProcessorQuantization;
 using Less.Text;
 using Less.Network;
+using System.Runtime.InteropServices;
 
 namespace Less.Image
 {
@@ -33,6 +34,7 @@ namespace Less.Image
         /// </summary>
         /// <param name="i"></param>
         /// <returns></returns>
+        /// <exception cref="Exception">操作失败</exception>
         public static bool HasTransparentPixel(this System.Drawing.Image i)
         {
             using (Bitmap bitmap = new Bitmap(i))
@@ -55,6 +57,8 @@ namespace Less.Image
         /// </summary>
         /// <param name="i"></param>
         /// <returns></returns>
+        /// <exception cref="NullReferenceException">Image 不能为 null</exception>
+        /// <exception cref="InvalidOperationException">不支持的图像格式</exception>
         public static MimeType GetMimeType(this System.Drawing.Image i)
         {
             return i.RawFormat.ToMimeType();
@@ -64,9 +68,12 @@ namespace Less.Image
         /// 裁剪
         /// </summary>
         /// <param name="i"></param>
-        /// <param name="width"></param>
-        /// <param name="height"></param>
-        /// <returns></returns>
+        /// <param name="width">宽度</param>
+        /// <param name="height">高度</param>
+        /// <returns>返回裁剪后的图片</returns>
+        /// <exception cref="NullReferenceException">Image 不能为 null</exception>
+        /// <exception cref="ArgumentOutOfRangeException">新的图片尺寸的宽度和高度必须大于零</exception>
+        /// <exception cref="Exception">操作失败</exception>
         public static System.Drawing.Image Crop(this System.Drawing.Image i, int width, int height)
         {
             return i.Crop(width, height, InterpolationMode.Bilinear);
@@ -76,10 +83,13 @@ namespace Less.Image
         /// 裁剪
         /// </summary>
         /// <param name="i"></param>
-        /// <param name="width"></param>
-        /// <param name="height"></param>
+        /// <param name="width">宽度</param>
+        /// <param name="height">高度</param>
         /// <param name="interpolationMode"></param>
-        /// <returns></returns>
+        /// <returns>返回裁剪后的图片</returns>
+        /// <exception cref="NullReferenceException">Image 不能为 null</exception>
+        /// <exception cref="ArgumentOutOfRangeException">新的图片尺寸的宽度和高度必须大于零</exception>
+        /// <exception cref="Exception">操作失败</exception>
         public static System.Drawing.Image Crop(this System.Drawing.Image i, int width, int height, InterpolationMode interpolationMode)
         {
             return i.Resize(width, height, ImageExtensions.GetMode(i.Width, i.Height, width, height, true), interpolationMode);
@@ -89,8 +99,11 @@ namespace Less.Image
         /// 根据最大宽度调整图片尺寸
         /// </summary>
         /// <param name="i"></param>
-        /// <param name="maxWidth"></param>
-        /// <returns></returns>
+        /// <param name="maxWidth">最大宽度</param>
+        /// <returns>返回调整后的图片</returns>
+        /// <exception cref="NullReferenceException">Image 不能为 null</exception>
+        /// <exception cref="ArgumentOutOfRangeException">最大宽度必须大于零</exception>
+        /// <exception cref="Exception">操作失败</exception>
         public static System.Drawing.Image ResizeMaxW(this System.Drawing.Image i, int maxWidth)
         {
             if (i.Width > maxWidth)
@@ -103,8 +116,11 @@ namespace Less.Image
         /// 根据宽度调整图片尺寸
         /// </summary>
         /// <param name="i"></param>
-        /// <param name="width"></param>
-        /// <returns></returns>
+        /// <param name="width">宽度</param>
+        /// <returns>返回调整后的图片</returns>
+        /// <exception cref="NullReferenceException">Image 不能为 null</exception>
+        /// <exception cref="ArgumentOutOfRangeException">新的图片尺寸的宽度必须大于零</exception>
+        /// <exception cref="Exception">操作失败</exception>
         public static System.Drawing.Image ResizeW(this System.Drawing.Image i, int width)
         {
             return i.ResizeW(width, InterpolationMode.Bilinear);
@@ -114,9 +130,12 @@ namespace Less.Image
         /// 根据宽度调整图片尺寸
         /// </summary>
         /// <param name="i"></param>
-        /// <param name="width"></param>
+        /// <param name="width">宽度</param>
         /// <param name="interpolationMode">插值算法</param>
-        /// <returns></returns>
+        /// <returns>返回调整后的图片</returns>
+        /// <exception cref="NullReferenceException">Image 不能为 null</exception>
+        /// <exception cref="ArgumentOutOfRangeException">新的图片尺寸的宽度必须大于零</exception>
+        /// <exception cref="Exception">操作失败</exception>
         public static System.Drawing.Image ResizeW(this System.Drawing.Image i, int width, InterpolationMode interpolationMode)
         {
             return i.ResizeW(width, Color.Empty, interpolationMode);
@@ -126,9 +145,12 @@ namespace Less.Image
         /// 根据宽度调整图片尺寸
         /// </summary>
         /// <param name="i"></param>
-        /// <param name="width"></param>
-        /// <param name="background"></param>
-        /// <returns></returns>
+        /// <param name="width">宽度</param>
+        /// <param name="background">背景色</param>
+        /// <returns>返回调整后的图片</returns>
+        /// <exception cref="NullReferenceException">Image 不能为 null</exception>
+        /// <exception cref="ArgumentOutOfRangeException">新的图片尺寸的宽度必须大于零</exception>
+        /// <exception cref="Exception">操作失败</exception>
         public static System.Drawing.Image ResizeW(this System.Drawing.Image i, int width, Color background)
         {
             return i.ResizeW(width, background, InterpolationMode.Bilinear);
@@ -138,10 +160,13 @@ namespace Less.Image
         /// 根据宽度调整图片尺寸
         /// </summary>
         /// <param name="i"></param>
-        /// <param name="width"></param>
-        /// <param name="background"></param>
+        /// <param name="width">宽度</param>
+        /// <param name="background">背景色</param>
         /// <param name="interpolationMode">插值算法</param>
-        /// <returns></returns>
+        /// <returns>返回调整后的图片</returns>
+        /// <exception cref="NullReferenceException">Image 不能为 null</exception>
+        /// <exception cref="ArgumentOutOfRangeException">新的图片尺寸的宽度必须大于零</exception>
+        /// <exception cref="Exception">操作失败</exception>
         public static System.Drawing.Image ResizeW(this System.Drawing.Image i, int width, Color background, InterpolationMode interpolationMode)
         {
             return i.Resize(width, ((float)width / i.Width * i.Height).ToInt(), background, interpolationMode);
@@ -151,8 +176,11 @@ namespace Less.Image
         /// 根据高度调整图片尺寸
         /// </summary>
         /// <param name="i"></param>
-        /// <param name="height"></param>
-        /// <returns></returns>
+        /// <param name="height">高度</param>
+        /// <returns>返回调整后的图片</returns>
+        /// <exception cref="NullReferenceException">Image 不能为 null</exception>
+        /// <exception cref="ArgumentOutOfRangeException">新的图片尺寸的高度必须大于零</exception>
+        /// <exception cref="Exception">操作失败</exception>
         public static System.Drawing.Image ResizeH(this System.Drawing.Image i, int height)
         {
             return i.ResizeH(height, InterpolationMode.Bilinear);
@@ -162,9 +190,12 @@ namespace Less.Image
         /// 根据高度调整图片尺寸
         /// </summary>
         /// <param name="i"></param>
-        /// <param name="height"></param>
+        /// <param name="height">高度</param>
         /// <param name="interpolationMode">插值算法</param>
-        /// <returns></returns>
+        /// <returns>返回调整后的图片</returns>
+        /// <exception cref="NullReferenceException">Image 不能为 null</exception>
+        /// <exception cref="ArgumentOutOfRangeException">新的图片尺寸的高度必须大于零</exception>
+        /// <exception cref="Exception">操作失败</exception>
         public static System.Drawing.Image ResizeH(this System.Drawing.Image i, int height, InterpolationMode interpolationMode)
         {
             return i.ResizeH(height, Color.Empty, interpolationMode);
@@ -174,9 +205,12 @@ namespace Less.Image
         /// 根据高度调整图片尺寸
         /// </summary>
         /// <param name="i"></param>
-        /// <param name="height"></param>
-        /// <param name="background"></param>
-        /// <returns></returns>
+        /// <param name="height">高度</param>
+        /// <param name="background">背景色</param>
+        /// <returns>返回调整后的图片</returns>
+        /// <exception cref="NullReferenceException">Image 不能为 null</exception>
+        /// <exception cref="ArgumentOutOfRangeException">新的图片尺寸的高度必须大于零</exception>
+        /// <exception cref="Exception">操作失败</exception>
         public static System.Drawing.Image ResizeH(this System.Drawing.Image i, int height, Color background)
         {
             return i.ResizeH(height, background, InterpolationMode.Bilinear);
@@ -186,10 +220,13 @@ namespace Less.Image
         /// 根据高度调整图片尺寸
         /// </summary>
         /// <param name="i"></param>
-        /// <param name="height"></param>
-        /// <param name="background"></param>
+        /// <param name="height">高度</param>
+        /// <param name="background">背景色</param>
         /// <param name="interpolationMode">插值算法</param>
-        /// <returns></returns>
+        /// <returns>返回调整后的图片</returns>
+        /// <exception cref="NullReferenceException">Image 不能为 null</exception>
+        /// <exception cref="ArgumentOutOfRangeException">新的图片尺寸的高度必须大于零</exception>
+        /// <exception cref="Exception">操作失败</exception>
         public static System.Drawing.Image ResizeH(this System.Drawing.Image i, int height, Color background, InterpolationMode interpolationMode)
         {
             return i.Resize(((float)height / i.Height * i.Width).ToInt(), height, background, interpolationMode);
@@ -199,9 +236,12 @@ namespace Less.Image
         /// 调整图片尺寸 不裁剪图片 只填充空白
         /// </summary>
         /// <param name="i"></param>
-        /// <param name="width"></param>
-        /// <param name="height"></param>
-        /// <returns></returns>
+        /// <param name="width">宽度</param>
+        /// <param name="height">高度</param>
+        /// <returns>返回调整后的图片</returns>
+        /// <exception cref="NullReferenceException">Image 不能为 null</exception>
+        /// <exception cref="ArgumentOutOfRangeException">新的图片尺寸的宽度和高度必须大于零</exception>
+        /// <exception cref="Exception">操作失败</exception>
         public static System.Drawing.Image Resize(this System.Drawing.Image i, int width, int height)
         {
             return i.Resize(width, height, InterpolationMode.Bilinear);
@@ -211,10 +251,13 @@ namespace Less.Image
         /// 调整图片尺寸 不裁剪图片 只填充空白
         /// </summary>
         /// <param name="i"></param>
-        /// <param name="width"></param>
-        /// <param name="height"></param>
+        /// <param name="width">宽度</param>
+        /// <param name="height">高度</param>
         /// <param name="interpolationMode">插值算法</param>
-        /// <returns></returns>
+        /// <returns>返回调整后的图片</returns>
+        /// <exception cref="NullReferenceException">Image 不能为 null</exception>
+        /// <exception cref="ArgumentOutOfRangeException">新的图片尺寸的宽度和高度必须大于零</exception>
+        /// <exception cref="Exception">操作失败</exception>
         public static System.Drawing.Image Resize(this System.Drawing.Image i, int width, int height, InterpolationMode interpolationMode)
         {
             return i.Resize(width, height, Color.Empty, interpolationMode);
@@ -224,10 +267,13 @@ namespace Less.Image
         /// 调整图片尺寸 不裁剪图片 只填充空白
         /// </summary>
         /// <param name="i"></param>
-        /// <param name="width"></param>
-        /// <param name="height"></param>
+        /// <param name="width">宽度</param>
+        /// <param name="height">高度</param>
         /// <param name="background">背景色</param>
-        /// <returns></returns>
+        /// <returns>返回调整后的图片</returns>
+        /// <exception cref="NullReferenceException">Image 不能为 null</exception>
+        /// <exception cref="ArgumentOutOfRangeException">新的图片尺寸的宽度和高度必须大于零</exception>
+        /// <exception cref="Exception">操作失败</exception>
         public static System.Drawing.Image Resize(this System.Drawing.Image i, int width, int height, Color background)
         {
             return i.Resize(width, height, background, InterpolationMode.Bilinear);
@@ -237,10 +283,13 @@ namespace Less.Image
         /// 调整图片尺寸
         /// </summary>
         /// <param name="i"></param>
-        /// <param name="width">新宽</param>
-        /// <param name="height">新高</param>
+        /// <param name="width">宽度</param>
+        /// <param name="height">高度</param>
         /// <param name="mode">缩放模式</param>
-        /// <returns></returns>
+        /// <returns>返回调整后的图片</returns>
+        /// <exception cref="NullReferenceException">Image 不能为 null</exception>
+        /// <exception cref="ArgumentOutOfRangeException">新的图片尺寸的宽度和高度必须大于零</exception>
+        /// <exception cref="Exception">操作失败</exception>
         public static System.Drawing.Image Resize(this System.Drawing.Image i, int width, int height, ResizeMode mode)
         {
             return i.Resize(width, height, Color.Empty, mode);
@@ -250,11 +299,14 @@ namespace Less.Image
         /// 调整图片尺寸 不裁剪图片 只填充空白
         /// </summary>
         /// <param name="i"></param>
-        /// <param name="width"></param>
-        /// <param name="height"></param>
+        /// <param name="width">宽度</param>
+        /// <param name="height">高度</param>
         /// <param name="background">背景色</param>
         /// <param name="interpolationMode">插值算法</param>
-        /// <returns></returns>
+        /// <returns>返回调整后的图片</returns>
+        /// <exception cref="NullReferenceException">Image 不能为 null</exception>
+        /// <exception cref="ArgumentOutOfRangeException">新的图片尺寸的宽度和高度必须大于零</exception>
+        /// <exception cref="Exception">操作失败</exception>
         public static System.Drawing.Image Resize(this System.Drawing.Image i, int width, int height, Color background, InterpolationMode interpolationMode)
         {
             return i.Resize(width, height, background, ImageExtensions.GetMode(i.Width, i.Height, width, height, false), interpolationMode);
@@ -264,11 +316,14 @@ namespace Less.Image
         /// 调整图片尺寸
         /// </summary>
         /// <param name="i"></param>
-        /// <param name="width"></param>
-        /// <param name="height"></param>
+        /// <param name="width">宽度</param>
+        /// <param name="height">高度</param>
         /// <param name="mode">缩放模式</param>
         /// <param name="interpolationMode">插值算法</param>
-        /// <returns></returns>
+        /// <returns>返回调整后的图片</returns>
+        /// <exception cref="NullReferenceException">Image 不能为 null</exception>
+        /// <exception cref="ArgumentOutOfRangeException">新的图片尺寸的宽度和高度必须大于零</exception>
+        /// <exception cref="Exception">操作失败</exception>
         public static System.Drawing.Image Resize(this System.Drawing.Image i, int width, int height, ResizeMode mode, InterpolationMode interpolationMode)
         {
             return i.Resize(width, height, Color.Empty, mode, interpolationMode);
@@ -278,11 +333,14 @@ namespace Less.Image
         /// 调整图片尺寸
         /// </summary>
         /// <param name="i"></param>
-        /// <param name="width">新宽</param>
-        /// <param name="height">新高</param>
+        /// <param name="width">宽度</param>
+        /// <param name="height">高度</param>
         /// <param name="background">背景色</param>
         /// <param name="mode">缩放模式</param>
-        /// <returns></returns>
+        /// <returns>返回调整后的图片</returns>
+        /// <exception cref="NullReferenceException">Image 不能为 null</exception>
+        /// <exception cref="ArgumentOutOfRangeException">新的图片尺寸的宽度和高度必须大于零</exception>
+        /// <exception cref="Exception">操作失败</exception>
         public static System.Drawing.Image Resize(this System.Drawing.Image i, int width, int height, Color background, ResizeMode mode)
         {
             return i.Resize(width, height, background, mode, InterpolationMode.Bilinear);
@@ -292,14 +350,21 @@ namespace Less.Image
         /// 调整图片尺寸
         /// </summary>
         /// <param name="i"></param>
-        /// <param name="width">新宽</param>
-        /// <param name="height">新高</param>
+        /// <param name="width">宽度</param>
+        /// <param name="height">高度</param>
         /// <param name="background">背景色</param>
         /// <param name="mode">缩放模式</param>
         /// <param name="interpolationMode">插值算法</param>
-        /// <returns></returns>
-        public static System.Drawing.Image Resize(this System.Drawing.Image i, int width, int height, Color background, ResizeMode mode, InterpolationMode interpolationMode)
+        /// <returns>返回调整后的图片</returns>
+        /// <exception cref="NullReferenceException">Image 不能为 null</exception>
+        /// <exception cref="ArgumentOutOfRangeException">新的图片尺寸的宽度和高度必须大于零</exception>
+        /// <exception cref="Exception">操作失败</exception>
+        public static System.Drawing.Image Resize(
+            this System.Drawing.Image i, int width, int height, Color background, ResizeMode mode, InterpolationMode interpolationMode)
         {
+            if (width <= 0 || height <= 0)
+                throw new ArgumentOutOfRangeException("新的图片尺寸的宽和高必须大于零");
+
             //如果原图片和新图片尺寸一致，克隆对象返回
             if (i.Width == width && i.Height == height)
                 return (System.Drawing.Image)i.Clone();
@@ -315,9 +380,9 @@ namespace Less.Image
                 Size size = ImageExtensions.CalculateSize(i.Width, i.Height, width, height, mode);
 
                 //如果原图片和新图片的比例不同，先裁剪或填充后，再缩放
-                using (System.Drawing.Image i2 = i.CropOrFill(size.Width, size.Height, background, interpolationMode))
+                using (System.Drawing.Image cropOrFill = i.CropOrFill(size.Width, size.Height, background, interpolationMode))
                 {
-                    return i2.Zoom(width, height, interpolationMode);
+                    return cropOrFill.Zoom(width, height, interpolationMode);
                 }
             }
         }
@@ -326,23 +391,40 @@ namespace Less.Image
         /// 保存图片
         /// </summary>
         /// <param name="i"></param>
-        /// <param name="format"></param>
-        /// <param name="value">图片质量(1~100)</param>
+        /// <param name="format">图像格式</param>
+        /// <param name="value">图片质量(1-100)</param>
         /// <returns></returns>
+        /// <exception cref="NullReferenceException">Image 不能为 null</exception>
+        /// <exception cref="InvalidOperationException">不支持的 ImageFormat</exception>
+        /// <exception cref="ExternalException">该图像以错误的图像格式保存</exception>
         public static MemoryStream Save(this System.Drawing.Image i, ImageFormat format, int value)
         {
             MemoryStream stream = new MemoryStream();
 
             if (i.RawFormat == ImageFormat.Gif)
             {
-                using (System.Drawing.Image i2 = ImageExtensions.Quantizer.Quantize(i))
+                using (System.Drawing.Image gif = ImageExtensions.Quantizer.Quantize(i))
                 {
-                    i2.Save(stream, format.ToImageCodecInfo(), value.ToEncoderParameters());
+                    try
+                    {
+                        gif.Save(stream, format.ToImageCodecInfo(), value.ToEncoderParameters());
+                    }
+                    catch (ArgumentNullException)
+                    {
+                        throw new InvalidOperationException("不支持的 ImageFormat");
+                    }
                 }
             }
             else
             {
-                i.Save(stream, format.ToImageCodecInfo(), value.ToEncoderParameters());
+                try
+                {
+                    i.Save(stream, format.ToImageCodecInfo(), value.ToEncoderParameters());
+                }
+                catch (ArgumentNullException)
+                {
+                    throw new InvalidOperationException("不支持的 ImageFormat");
+                }
             }
 
             //重置数据流位置
@@ -355,15 +437,18 @@ namespace Less.Image
         /// 保存图片
         /// </summary>
         /// <param name="i"></param>
-        /// <param name="path"></param>
-        /// <param name="value">图片质量(1~100)</param>
+        /// <param name="path">保存路径</param>
+        /// <param name="value">图片质量(1-100)</param>
+        /// <exception cref="NullReferenceException">Image 不能为 null</exception>
+        /// <exception cref="ArgumentException">无效的路径</exception>
+        /// <exception cref="ExternalException">该图像被保存到创建该图像的文件</exception>
         public static void Save(this System.Drawing.Image i, string path, int value)
         {
             if (i.RawFormat == ImageFormat.Gif)
             {
-                using (System.Drawing.Image i2 = ImageExtensions.Quantizer.Quantize(i))
+                using (System.Drawing.Image gif = ImageExtensions.Quantizer.Quantize(i))
                 {
-                    i2.Save(path, path.ToImageCodecInfo(), value.ToEncoderParameters());
+                    gif.Save(path, path.ToImageCodecInfo(), value.ToEncoderParameters());
                 }
             }
             else
@@ -376,10 +461,12 @@ namespace Less.Image
         /// 缩放
         /// </summary>
         /// <param name="i"></param>
-        /// <param name="width"></param>
-        /// <param name="height"></param>
+        /// <param name="width">宽</param>
+        /// <param name="height">高</param>
         /// <param name="mode">插值算法</param>
-        /// <returns></returns>
+        /// <returns>返回缩放后的图片</returns>
+        /// <exception cref="NullReferenceException">Image 不能为 null</exception>
+        /// <exception cref="Exception">操作失败</exception>
         public static System.Drawing.Image Zoom(this System.Drawing.Image i, int width, int height, InterpolationMode mode)
         {
             Bitmap bitmap = new Bitmap(width, height);
@@ -426,7 +513,10 @@ namespace Less.Image
         /// <param name="background">背景色</param>
         /// <param name="mode">插值算法</param>
         /// <returns></returns>
-        private static System.Drawing.Image CropOrFill(this System.Drawing.Image image, int width, int height, Color background, InterpolationMode mode)
+        /// <exception cref="NullReferenceException">Image 不能为 null</exception>
+        /// <exception cref="Exception">操作失败</exception>
+        private static System.Drawing.Image CropOrFill(
+            this System.Drawing.Image image, int width, int height, Color background, InterpolationMode mode)
         {
             Bitmap bitmap = new Bitmap(width, height);
 
@@ -507,6 +597,7 @@ namespace Less.Image
         /// </summary>
         /// <param name="path"></param>
         /// <returns></returns>
+        /// <exception cref="ArgumentException">无效的路径</exception>
         private static ImageCodecInfo ToImageCodecInfo(this string path)
         {
             string ext = Path.GetExtension(path).ToUpper();
@@ -530,6 +621,8 @@ namespace Less.Image
         /// </summary>
         /// <param name="format"></param>
         /// <returns></returns>
+        /// <exception cref="ArgumentNullException">ImageFormat 不能为 null</exception>
+        /// <exception cref="InvalidOperationException">不支持的 ImageFormat</exception>
         private static ImageCodecInfo ToImageCodecInfo(this ImageFormat format)
         {
             ImageCodecInfo[] infos = ImageCodecInfo.GetImageEncoders();
@@ -542,7 +635,7 @@ namespace Less.Image
                     return info;
             }
 
-            throw new ArgumentException();
+            throw new InvalidOperationException("不支持的 ImageFormat");
         }
     }
 }

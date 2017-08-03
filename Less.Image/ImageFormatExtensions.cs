@@ -3,6 +3,7 @@
 using System.Drawing.Imaging;
 using Less.Network;
 using System.Collections.Generic;
+using System;
 
 namespace Less.Image
 {
@@ -38,9 +39,18 @@ namespace Less.Image
         /// </summary>
         /// <param name="i"></param>
         /// <returns></returns>
+        /// <exception cref="ArgumentNullException">ImageFormat 不能为 null</exception>
+        /// <exception cref="InvalidOperationException">不支持的 ImageFormat</exception>
         public static MimeType ToMimeType(this ImageFormat i)
         {
-            return ImageFormatExtensions.Map[i];
+            try
+            {
+                return ImageFormatExtensions.Map[i];
+            }
+            catch (KeyNotFoundException ex)
+            {
+                throw new InvalidOperationException("不支持的 ImageFormat", ex);
+            }
         }
     }
 }
