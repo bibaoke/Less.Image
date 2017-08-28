@@ -608,8 +608,10 @@ namespace Less.Image
 
                 foreach (ImageCodecInfo info in infos)
                 {
-                    if (info.FilenameExtension.Split(';').Contains("*".Combine(ext)))
+                    if (info.FilenameExtension.Split(';').Contains("*" + ext))
+                    {
                         return info;
+                    }
                 }
             }
 
