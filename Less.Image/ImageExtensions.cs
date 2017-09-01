@@ -44,7 +44,9 @@ namespace Less.Image
                     for (int y = 0; y < bitmap.Height; y++)
                     {
                         if (bitmap.GetPixel(x, y).A < 255)
+                        {
                             return true;
+                        }
                     }
                 }
             }
@@ -107,9 +109,13 @@ namespace Less.Image
         public static System.Drawing.Image ResizeMaxW(this System.Drawing.Image i, int maxWidth)
         {
             if (i.Width > maxWidth)
+            {
                 return i.ResizeW(maxWidth, InterpolationMode.Bilinear);
+            }
             else
+            {
                 return (System.Drawing.Image)i.Clone();
+            }
         }
 
         /// <summary>
@@ -363,11 +369,15 @@ namespace Less.Image
             this System.Drawing.Image i, int width, int height, Color background, ResizeMode mode, InterpolationMode interpolationMode)
         {
             if (width <= 0 || height <= 0)
+            {
                 throw new ArgumentOutOfRangeException("新的图片尺寸的宽和高必须大于零");
+            }
 
             //如果原图片和新图片尺寸一致，克隆对象返回
             if (i.Width == width && i.Height == height)
+            {
                 return (System.Drawing.Image)i.Clone();
+            }
 
             if (((float)i.Width / i.Height == (float)width / height))
             {
@@ -499,9 +509,13 @@ namespace Less.Image
             float newScale = (float)newWidth / newHeight;
 
             if (crop)
+            {
                 return oldScale < newScale ? ResizeMode.WidthFirst : ResizeMode.HeightFirst;
+            }
             else
+            {
                 return oldScale > newScale ? ResizeMode.WidthFirst : ResizeMode.HeightFirst;
+            }
         }
 
         /// <summary>
@@ -634,7 +648,9 @@ namespace Less.Image
             foreach (ImageCodecInfo info in infos)
             {
                 if (info.MimeType == mimeType)
+                {
                     return info;
+                }
             }
 
             throw new InvalidOperationException("不支持的 ImageFormat");
