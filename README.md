@@ -93,10 +93,10 @@
     <a href="https://www.nuget.org/packages/Less.Image" target="_blank">https://www.nuget.org/packages/Less.Image</a>
 </p>
 <p>
-    本文代码：<a href="https://github.com/bibaoke/Less.Image/blob/master/Test/Program.cs" target="_blank">GitHub</a>&nbsp; &nbsp;&nbsp;<a href="https://code.csdn.net/closurer/less-image/tree/master/Test/Program.cs" target="_blank">CSDN</a>
+    本文代码：<a href="https://github.com/bibaoke/Less.Image/blob/master/Test/Program.cs" target="_blank">GitHub</a>&nbsp; &nbsp;&nbsp;<a href="https://gitee.com/bibaoke/Less.Image/blob/master/Test/Program.cs" target="_blank">码云</a>
 </p>
 <p>
-    项目代码：<a href="https://github.com/bibaoke/Less.Image" target="_blank">GitHub</a>&nbsp; &nbsp;&nbsp;<a href="https://code.csdn.net/closurer/less-image/tree/master" target="_blank">CSDN</a>
+    项目代码：<a href="https://github.com/bibaoke/Less.Image" target="_blank">GitHub</a>&nbsp; &nbsp;&nbsp;<a href="https://gitee.com/bibaoke/Less.Image" target="_blank">码云</a>
 </p>
 <p>
     Less.Image 还有两个缺点。一是缩放 gif 动画，处理后会剩下第一帧，失去了动画的效果；二是因为 windows 内置的 png 编码器并不能很好地压缩图片，所以对 png 进行缩放的话，图片占用空间会比较大。所以如果图片没有透明像素的话，最好使用 jpg。

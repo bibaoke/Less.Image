@@ -365,8 +365,7 @@ namespace Less.Image
         /// <exception cref="NullReferenceException">Image 不能为 null</exception>
         /// <exception cref="ArgumentOutOfRangeException">新的图片尺寸的宽度和高度必须大于零</exception>
         /// <exception cref="Exception">操作失败</exception>
-        public static System.Drawing.Image Resize(
-            this System.Drawing.Image i, int width, int height, Color background, ResizeMode mode, InterpolationMode interpolationMode)
+        public static System.Drawing.Image Resize(this System.Drawing.Image i, int width, int height, Color background, ResizeMode mode, InterpolationMode interpolationMode)
         {
             if (width <= 0 || height <= 0)
             {
@@ -529,8 +528,7 @@ namespace Less.Image
         /// <returns></returns>
         /// <exception cref="NullReferenceException">Image 不能为 null</exception>
         /// <exception cref="Exception">操作失败</exception>
-        private static System.Drawing.Image CropOrFill(
-            this System.Drawing.Image image, int width, int height, Color background, InterpolationMode mode)
+        private static System.Drawing.Image CropOrFill(this System.Drawing.Image image, int width, int height, Color background, InterpolationMode mode)
         {
             Bitmap bitmap = new Bitmap(width, height);
 
