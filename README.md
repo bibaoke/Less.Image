@@ -1,4 +1,4 @@
-<h2 style="text-align:center;">
+﻿<h2 style="text-align:center;">
     一个简单的 C# 图片缩放模块 —— Less.Image
 </h2>
 <p>
