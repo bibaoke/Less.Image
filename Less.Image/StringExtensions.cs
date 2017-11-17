@@ -1,7 +1,7 @@
 ﻿//bibaoke.com
 
 using System.Drawing;
-using System.Drawing.Drawing2D;
+using System.Drawing.Text;
 
 namespace Less.Image
 {
@@ -11,7 +11,7 @@ namespace Less.Image
     public static class StringExtensions
     {
         /// <summary>
-        /// 
+        /// 把文字输出到图片
         /// </summary>
         /// <param name="s"></param>
         /// <param name="width"></param>
@@ -28,6 +28,8 @@ namespace Less.Image
 
             using (Graphics g = Graphics.FromImage(image))
             {
+                g.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
+
                 g.Clear(background);
 
                 g.DrawString(s, font, brush, layoutRectangle, format);

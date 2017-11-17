@@ -36,6 +36,19 @@ namespace Test
             Image test5 = origin.ResizeH(200);
 
             test5.Save(Application.SetupDir.CombinePath("yangmi_H200.jpg"), 90);
+
+            //
+            StringFormat format = new StringFormat();
+
+            format.Alignment = StringAlignment.Center;
+
+            "Q".ToImage(
+                32, 32, Color.White, new Font("Arial", 21), Brushes.Black, new RectangleF(0, 0, 32, 32), format).Save(
+                Application.SetupDir.CombinePath("Q.jpg"));
+
+            "天".ToImage(
+                32, 32, Color.White, new Font("微软雅黑", 17), Brushes.Black, new RectangleF(0, 0, 32, 32), format).Save(
+                Application.SetupDir.CombinePath("天.jpg"));
         }
     }
 }
