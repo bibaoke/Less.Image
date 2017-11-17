@@ -28,8 +28,6 @@ namespace Less.Image
 
             using (Graphics g = Graphics.FromImage(image))
             {
-                g.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
-
                 g.Clear(background);
 
                 g.DrawString(s, font, brush, layoutRectangle, format);
